@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react"
+import "./index.css"
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       .then(data => setMessage(data.message));
   }, []);
 
-  return <p>{message}</p>
+  return <p className="font-bold">{message}</p>
 
   }
 
