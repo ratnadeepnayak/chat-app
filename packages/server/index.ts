@@ -1,0 +1,23 @@
+import express from 'express';
+import type { Request,Response } from 'express';
+import OpenAI from 'openai';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const app = express();
+
+const client = new OpenAI({
+   apiKey: process.env.OPENAI_API_KEY,
+});
+
+const port = 3000
+
+app.get("/", (req:Request,res:Response) => {
+    res.send("Hello World")
+})
+
+app.listen(port,() => {
+    console.log("app is running")
+})
+
