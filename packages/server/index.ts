@@ -1,5 +1,5 @@
 import express from 'express';
-import type { Request,Response } from 'express';
+import type { Request, Response } from 'express';
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
 
@@ -11,19 +11,16 @@ const client = new OpenAI({
    apiKey: process.env.OPENAI_API_KEY,
 });
 
-const port = 3000
+const port = 3000;
 
-app.get("/", (req:Request,res:Response) => {
-    res.send("Hello World")
-})
-
-app.get('/api/hello', (req: Request, res: Response) => {
-  res.json({ message: 'Hello World!' });
+app.get('/', (req: Request, res: Response) => {
+   res.send('Hello World');
 });
 
+app.get('/api/hello', (req: Request, res: Response) => {
+   res.json({ message: 'Hello World!' });
+});
 
-
-app.listen(port,() => {
-    console.log("app is running")
-})
-
+app.listen(port, () => {
+   console.log('app is running');
+});
